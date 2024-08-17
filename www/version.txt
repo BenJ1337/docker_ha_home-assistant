@@ -1,0 +1,1 @@
+https://github.com/RomRider/apexcharts-card/releases/tag/v1.10.0

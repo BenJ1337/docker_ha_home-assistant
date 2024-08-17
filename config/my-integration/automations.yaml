@@ -1,0 +1,19 @@
+- alias: 'Meldung Rauch'
+  trigger:
+    - platform: mqtt
+      topic: "zigbee2mqtt/HEIMAN/HS1SA/sensor-1"
+      value_template: '{{ value_json.smoke }}'
+      payload: true
+  action:
+    - service: persistent_notification.create
+      data:
+        message: 'Rauch erkannt'
+        notification_id: "1234"
+    - service: notify.mobile_app_note_24_ultra_sm_s928b
+      data:
+        message: "Rauch durch Ruachmelder 1 erkannt!"
+        title: 'Rauch erkannt'
+        data:
+          channel: 'Rauch'
+          notification_icon: "mdi:smoke-detector-variant-alert"
+# https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channels

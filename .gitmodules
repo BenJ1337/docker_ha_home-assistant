@@ -1,0 +1,9 @@
+[submodule "config/my-integration/mqtt.d"]
+	path = config/my-integration/mqtt.d
+	url = git@github.com:BenJ1337/ha_mqtt.git
+[submodule "config/my-integration/automation.d"]
+	path = config/my-integration/automation.d
+	url = git@github.com:BenJ1337/ha_automation.git
+[submodule "config/my-integration/zone.d"]
+	path = config/my-integration/zone.d
+	url = git@github.com:BenJ1337/ha_zones.git

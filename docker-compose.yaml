@@ -1,0 +1,24 @@
+services:
+  ha:
+    image: ghcr.io/home-assistant/home-assistant:2025.2.1
+    container_name: ha
+    volumes:
+      - ./config/configuration.yaml:/config/configuration.yaml:ro
+      - ${DIR_SECRETS_YAML:-}secrets.yaml:/config/secrets.yaml:ro
+      - ./www:/config/www/:ro
+      - ./config/my-integration/:/config/my-integration:ro
+      - ./config/blueprints/:/config/blueprints:ro
+      - ha_ha:/config/
+      - /etc/localtime:/etc/localtime:ro
+      - ~/certs/:/tls:ro
+    restart: unless-stopped
+    networks:
+      - ha_network
+    healthcheck:
+      test: curl --insecure --fail https://localhost:29000 || exit 1
+networks:
+  ha_network:
+    external: true
+volumes:
+  ha_ha:
+    external: true

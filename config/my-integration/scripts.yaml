@@ -1,0 +1,10 @@
+'1716227659290':
+  alias: Confirmable Notification - Update Home Assistant
+  use_blueprint:
+    path: homeassistant/confirmable_notification.yaml
+    input:
+      notify_device: 71110a20cbf966ff25c4fa7e59956920
+      title: Update für HomeAssistant verfügbar
+      dismiss_action: []
+      message: '1'
+  icon: mdi:cellphone-arrow-down

@@ -1,0 +1,13 @@
+api_version: 2
+ssl: false
+host: ha-influxdb
+port: 8086
+token: !secret influxdb2Token
+organization: homeassistant
+bucket: homeassistant
+tags:
+  source: HA
+tags_attributes:
+  - friendly_name
+default_measurement: units
+include: !include influxdb_include.yaml

@@ -1,0 +1,33 @@
+
+# Loads default set of integrations. Do not remove.
+#default_config:
+history:
+homeassistant_alerts:
+logbook:
+mobile_app:
+
+# Load frontend themes from the themes folder
+#frontend:
+#  themes: !include_dir_merge_named themes
+
+automation: !include_dir_merge_list my-integration/automation.d
+
+script: !include my-integration/scripts.yaml
+
+scene: !include my-integration/scenes.yaml
+
+http: !include my-integration/http.yaml
+
+recorder:
+  db_url: !secret maria_url
+
+mqtt: !include_dir_merge_list my-integration/mqtt.d
+
+homeassistant:
+  country: DE
+  name: HA
+  time_zone: Europe/Berlin
+
+zone: !include_dir_merge_list my-integration/zone.d
+
+influxdb: !include my-integration/influxdb.yaml

@@ -1,0 +1,14 @@
+# https://www.home-assistant.io/integrations/http/
+ip_ban_enabled: false
+login_attempts_threshold: 5
+server_port: 29000
+use_x_forwarded_for: true
+trusted_proxies:
+  - 192.168.100.1
+cors_allowed_origins:
+  - https://objects.githubusercontent.com
+  - https://github.com
+  - https://google.com
+  - https://www.home-assistant.io
+ssl_certificate: /tls/cert.pem
+ssl_key: /tls/key.pem

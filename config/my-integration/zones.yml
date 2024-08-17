@@ -1,0 +1,10 @@
+- name: Arbeit
+  latitude: 48.55301060327181
+  longitude: 12.154060495302858
+  radius: 250
+  icon: mdi:briefcase
+- name: Home
+  latitude: 48.50795667250604
+  longitude: 12.157146614666065
+  radius: 250
+  icon: mdi:home-account
